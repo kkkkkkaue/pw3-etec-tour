@@ -1,0 +1,39 @@
+<div class="card">
+    <div class="card-header">
+        Listagem de pacotes
+    </div>
+    <div class="card-body">
+	
+        <table class="table table-striped">
+            
+            <thead>
+                <tr>
+                    <th>Pacote</th>
+                    <th>Valor</th>
+                    <th>Data de início</th>
+                    <th>Data de término</th>
+                    <th>Aprovado</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of pacotes">
+                    <td>{{item.nome}}</td>
+                    <td>{{item.valor | currency:'BRL'}}</td>
+                    <td>{{item.dataInicio | date:'dd/MM/yyyy'}}</td>
+                    <td>{{item.dataFim | date:'dd/MM/yyyy'}}</td>
+                    <td>{{item.aprovado ? "Sim" : "Não"}}</td>
+                    <td>
+                        <button routerLink="/detalhes-pacote/{{item.id}}" type="submit" class="btn btn-secondary btn-sm">Detalhes</button>
+                        &nbsp;&nbsp;&nbsp;
+                        <button routerLink="/aprovacao-pacote/{{item.id}}" type="submit" class="btn btn-warning btn-sm">Aprovar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+	</div>
+</div>
+
+
+

@@ -1,0 +1,56 @@
+<div class="card">
+    <div class="card-header">
+        Detalhes do pacote - id: {{id}}
+    </div>
+    <div class="card-body">
+        <div class="form-group row">
+            <label class="col-md-4 col-form-label text-md-right">Nome</label>
+            <div class="col-md-6">
+                <label class="detail-control">{{pacote.nome}}</label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-4 col-form-label text-md-right">Valor</label>
+            <div class="col-md-6">
+                <label class="detail-control">{{pacote.valor | currency : 'BRL'}}</label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-4 col-form-label text-md-right">Data de início</label>
+            <div class="col-md-6">
+                <label class="detail-control">{{ pacote.dataInicio | date:'dd/MM/yyyy' }}</label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-4 col-form-label text-md-right">Data de fim</label>
+            <div class="col-md-6">
+                <label class="detail-control">{{ pacote.dataFim | date:'dd/MM/yyyy' }}</label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-4 col-form-label text-md-right">Telefone</label>
+            <div class="col-md-6">
+                <label class="detail-control">{{pacote.telefone}}</label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-4 col-form-label text-md-right">Site</label>
+            <div class="col-md-6">
+                <label class="detail-control">{{pacote.site}}</label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-4 col-form-label text-md-right">Descrição</label>
+            <div class="col-md-6">
+                <div class="detail-control">{{pacote.detalhes}}</div>
+            </div>
+        </div>
+        <div class="form-group row mb-0">
+            <div class="col-md-6 offset-md-4">
+                <button type="submit" class="btn btn-primary btn-sm" routerLink="/lista-pacotes">
+                    Voltar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

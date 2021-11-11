@@ -1,0 +1,41 @@
+<div class="alert alert-warning">
+    Tem certeza que deseja aprovar o pacote abaixo?
+</div>
+
+<div class="card">
+    <div class="card-header">
+        Aprovação de pacote - id: {{id}}
+    </div>
+    <div class="card-body">
+
+        <table class="table table-striped">
+
+            <thead>
+                <tr>
+                    <th>Pacote</th>
+                    <th>Valor</th>
+                    <th>Data de início</th>
+                    <th>Data de término</th>
+                    <th>Aprovado</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{pacote.nome}}</td>
+                    <td>{{pacote.valor | currency:'BRL'}}</td>
+                    <td>{{pacote.dataInicio | date:'dd/MM/yyyy'}}</td>
+                    <td>{{pacote.dataFim | date:'dd/MM/yyyy'}}</td>
+                    <td>{{pacote.aprovado ? "Sim" : "Não"}}</td>
+                    <td>
+                        <button routerLink="/lista-pacotes" type="submit" class="btn btn-info btn-sm">Voltar</button>
+                        &nbsp;&nbsp;&nbsp;
+                        <button type="submit" class="btn btn-danger btn-sm">Confirmar</button>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+
+    </div>
+</div>
