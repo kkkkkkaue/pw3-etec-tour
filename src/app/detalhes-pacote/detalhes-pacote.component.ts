@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { PacoteService } from '../services/pacote.service';
 
 @Component({
   selector: 'app-detalhes-pacote',
@@ -9,13 +10,13 @@ import { ActivatedRoute } from '@angular/router';
 export class DetalhesPacoteComponent implements OnInit {
   
   pacote : any = {};
-  id : any = "";
+  id: any = "";
 
-  constructor(private route : ActivatedRoute) { }
+  constructor(private route : ActivatedRoute, private service : PacoteService) { }
 
   ngOnInit(): void {
-    this.pacote = { "id": 2, "valor": 5499, "nome": "Egito (Cairo)", "dataInicio": "2021-06-16 11:00:00", "dataFim": "2021-06-28 11:00:00", "aprovado": false };
     this.id = this.route.snapshot.paramMap.get("id");
+    this.service.buscarPorId(this.id).subscribe(e => this.pacote = e);
   }
 
 }
