@@ -18,4 +18,5 @@ export class DetalhesPacoteComponent implements OnInit {
     this.id = this.route.snapshot.paramMap.get("id");
     this.service.buscarPorId(this.id).subscribe(e => this.pacote = e);
   }
+
 }
