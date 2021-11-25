@@ -17,4 +17,9 @@ export class PacoteService {
   buscarPorId(id : any) : Observable<any>{
     return this.http.get(`${this.API}/${id}`);
   }
+
+  inserir(data : any) : Observable<any>
+  {
+    return this.http.post(this.API, data);
+  }
 }

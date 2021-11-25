@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { PacoteService } from '../services/pacote.service';
 
 @Component({
   selector: 'app-novo-pacote',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NovoPacoteComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service : PacoteService) { }
 
   ngOnInit(): void {
+  }
+
+  pacote: any ={
+    detalhe: {}
+  };
+
+  salvar(){
+    this.service.inserir(this.pacote)
+      .subscribe(e => alert("Cadastro realizado"));
   }
 
 }
