@@ -13,7 +13,7 @@ export class ListaPacotesComponent implements OnInit {
   constructor(private service : PacoteService) { }
 
   ngOnInit(): void {
-    this.service.listarTodos().subscribe(e => this.pacotes = e);
+    this.service.ListarTodos().subscribe(e => this.pacotes = e);
   }
 
 }

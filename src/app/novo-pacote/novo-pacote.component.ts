@@ -15,12 +15,12 @@ export class NovoPacoteComponent implements OnInit {
   }
 
   pacote: any ={
-    detalhe: {}
+    detalhe: { }
   };
 
   salvar(){
-    this.service.inserir(this.pacote).subscribe(e => alert("Cadastro realizado"));
-
+    this.service.inserir(this.pacote)
+                .subscribe(e => alert("Cadastro realizado"));
   }
 
 }
