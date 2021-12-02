@@ -19,8 +19,8 @@ export class NovoPacoteComponent implements OnInit {
   };
 
   salvar(){
-    this.service.inserir(this.pacote)
-      .subscribe(e => alert("Cadastro realizado"));
+    this.service.inserir(this.pacote).subscribe(e => alert("Cadastro realizado"));
+
   }
 
 }

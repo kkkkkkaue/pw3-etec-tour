@@ -18,8 +18,7 @@ export class PacoteService {
     return this.http.get(`${this.API}/${id}`);
   }
 
-  inserir(data : any) : Observable<any>
-  {
+  inserir(data : any) : Observable<any>{
     return this.http.post(this.API, data);
   }
 }
